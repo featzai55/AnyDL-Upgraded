@@ -1,5 +1,5 @@
 class Translation(object):
-    START_TEXT = """Hi {}\n\nSend me any media file, I'll generate external link for the file. You can choose any host from the commands external file hosts that I support."""
+    START_TEXT = """Hi {}\n\nSend me any media file, I'll generate external link for the file. You can choose any host from the commands external file hosts that I support.\n@BotDunia"""
     RENAME_403_ERR = "Sorry. You are not permitted to rename this file."
     ABS_TEXT = " Please don't be selfish."
     UPGRADE_TEXT = " "
@@ -26,7 +26,7 @@ URL | filename | username | password"""
     CURENT_PLAN_DETAILS = """Current Plan details
 --------
 Telegram ID: <code>{}</code>
-Plan name: AnyDl
+Plan name: AnyDl Pro Max
 Expiry: i don't know"""
     HELP_USER = """no on gona help you"""
     REPLY_TO_DOC_GET_LINK = "Reply to a Telegram media to get High Speed Direct Download Link"
