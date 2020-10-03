@@ -84,7 +84,7 @@ def get_link(bot, update):
             adfulurl = file_inance.webContentLink
             max_days = 0
         else: 
-            url = "https://srv-file5.gofile.io/upload"
+            url = "https://apiv2.gofile.io/getServer"
             max_days = 5
             timeseconds = int(time.time())
             timesecondsplusexpiry = int(time.time()) + (max_days*24*60*60)
