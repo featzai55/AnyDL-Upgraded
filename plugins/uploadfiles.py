@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# (c) Shrimadhav U K
+# (c) Vishal2k2
 
 # the logging things
 import logging
@@ -32,12 +32,10 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 from helper_funcs.chat_base import TRChatBase
 from helper_funcs.display_progress import progress_for_pyrogram
-from pydrive.drive import GoogleDrive
 
-
-@pyrogram.Client.on_message(pyrogram.Filters.command(["uploadfiles"]))
+@pyrogram.Client.on_message(pyrogram.Filters.command(["mirror"]))
 def get_link(bot, update):
-    TRChatBase(update.from_user.id, update.text, "uploadfiles")
+    TRChatBase(update.from_user.id, update.text, "mirror")
     if str(update.from_user.id) in Config.BANNED_USERS:
         bot.send_message(
             chat_id=update.chat.id,
@@ -71,20 +69,6 @@ def get_link(bot, update):
             message_id=a.message_id
         )
         end_one = datetime.now()
-        if str(update.from_user.id) in Config.G_DRIVE_AUTH_DRQ:
-            gauth = Config.G_DRIVE_AUTH_DRQ[str(update.from_user.id)]
-            # Create GoogleDrive instance with authenticated GoogleAuth instance.
-            drive = GoogleDrive(gauth)
-            file_inance = drive.CreateFile()
-            # Read file and set it as a content of this instance.
-            file_inance.SetContentFile(after_download_file_name)
-            file_inance.Upload() # Upload the file.
-            end_two = datetime.now()
-            time_taken_for_upload = (end_two - end_one).seconds
-            logger.info(file_inance)
-            adfulurl = file_inance.webContentLink
-            max_days = 0
-        else:
             url = "https://up.uploadfiles.io/upload"
             max_days = 7
             
