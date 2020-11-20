@@ -46,6 +46,7 @@ def unzip(bot, update):
     if ((reply_message is not None) and
         (reply_message.document is not None) and
         (reply_message.document.file_name.endswith(Translation.UNZIP_SUPPORTED_EXTENSIONS))):
+        start = datetime.now()
         a = bot.send_message(
             chat_id=update.chat.id,
             text=Translation.DOWNLOAD_START,
@@ -79,6 +80,7 @@ def unzip(bot, update):
                 text=Translation.EXTRACT_ZIP_INTRO_THREE,
                 message_id=a.message_id
             )
+            end_one = datetime.now()
             try:
                 command_to_exec = [
                     "7z",
