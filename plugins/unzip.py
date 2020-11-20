@@ -53,12 +53,13 @@ def unzip(bot, update):
             text=Translation.DOWNLOAD_START,
             reply_to_message_id=update.message_id
         )
+        c_time = time.time()
         try:
             bot.download_media(
                 message=reply_message,
                 file_name=saved_file_path,
                 progress=progress_for_pyrogram,
-                progress_args=(Translation.DOWNLOAD_START, a.message_id, update.chat.id)
+                progress_args=(Translation.DOWNLOAD_START, a.message_id, update.chat.id, c_time)
             )
         except (ValueError) as e:
             bot.edit_message_text(
