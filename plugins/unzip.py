@@ -83,7 +83,7 @@ def unzip(bot, update):
                 command_to_exec = [
                     "7z",
                     "e",
-                    saved_file_path
+                    saved_file_path,
                     "-o" + extract_dir_path
                 ]
                 # https://stackoverflow.com/a/39629367/4723940
