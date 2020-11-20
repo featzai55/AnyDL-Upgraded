@@ -8,6 +8,7 @@ logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
+from datetime import datetime
 import os
 import shutil
 import subprocess
