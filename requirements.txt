@@ -1,5 +1,5 @@
 requests
-youtube_dl
+git+https://github.com/gautamajay52/youtube-dl-1.git
 git+git://github.com/google/chatbase-python.git
 tgcrypto
 Pillow
